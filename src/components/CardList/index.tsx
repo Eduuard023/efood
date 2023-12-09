@@ -31,12 +31,12 @@ const CardList = ({ restaurants, products }: CardListProps) => {
     return (
       <ListContainer orientation="horizontal" className="container">
         {products?.map((product) => (
-          // eslint-disable-next-line react/jsx-key
           <Card
             title={product.title}
             image={product.image}
             description={product.description}
             type="product"
+            key={product.id}
           />
         ))}
       </ListContainer>
@@ -44,4 +44,4 @@ const CardList = ({ restaurants, products }: CardListProps) => {
   }
 }
 
-export { CardList }
+export default CardList

@@ -1,5 +1,5 @@
 import Header from '../../components/Header'
-import { CardList } from '../../components/CardList'
+import CardList from '../../components/CardList'
 import sushi from '../../assets/images/sushi.png'
 import macarrao from '../../assets/images/macarrao.png'
 import Restaurant from '../../models/Restaurant'
