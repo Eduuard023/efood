@@ -3,6 +3,7 @@ import { colors } from '../../styles'
 
 export const FooterBg = styled.div`
   background-color: ${colors.bege};
+  margin-top: 80px;
 
   p {
     width: 480px;
@@ -18,7 +19,6 @@ export const FooterContainer = styled.div`
   align-items: center;
   padding: 40px 0;
   flex-direction: column;
-  margin-top: 80px;
 `
 
 export const SocialMedias = styled.ul`
@@ -28,5 +28,15 @@ export const SocialMedias = styled.ul`
 
   li {
     background-color: ${colors.vermelho};
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      color: ${colors.bege};
+    }
   }
 `

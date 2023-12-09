@@ -1,5 +1,6 @@
 import star from '../../assets/images/estrela.png'
 import Button from '../Button'
+import Tag from '../Tag'
 import {
   CardContainer,
   CardHeader,
@@ -13,12 +14,22 @@ type CardProps = {
   title: string
   description: string
   score: number
+  category: string
+  spotlight: string
 }
 
-const Card = ({ image, title, description, score }: CardProps) => {
+const Card = ({
+  image,
+  title,
+  description,
+  score,
+  category,
+  spotlight
+}: CardProps) => {
   return (
     <CardContainer>
       <img src={image} alt={title} />
+      <Tag spotlight={spotlight} category={category} />
       <CardInfo>
         <CardHeader>
           <h3>{title}</h3>

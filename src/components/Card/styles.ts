@@ -8,8 +8,8 @@ export const CardContainer = styled.div`
   background-color: ${colors.branco};
   border: 1px solid ${colors.vermelho};
   border-top: none;
-  margin: 0 auto; /* Center the card horizontally */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin: 0 auto;
+  box-sizing: border-box;
 `
 
 export const CardInfo = styled.div`
