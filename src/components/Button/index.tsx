@@ -2,7 +2,7 @@ import { ButtonStyle } from './styled'
 
 export type ButtonProps = {
   name: 'info' | 'add'
-  children: string
+  children: string | JSX.Element
 }
 
 const Button = ({ name, children }: ButtonProps) => {

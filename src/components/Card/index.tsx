@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom'
 import star from '../../assets/images/estrela.png'
 import Button from '../Button'
+import { ButtonStyle } from '../Button/styled'
 import Tag from '../Tag'
 import {
   CardContainer,
@@ -9,13 +11,14 @@ import {
   Score
 } from './styles'
 
-type CardProps = {
+export type CardProps = {
   image: string
   title: string
   description: string
-  score: number
-  category: string
-  spotlight: string
+  score?: number
+  category?: string
+  spotlight?: string
+  type: 'restaurant' | 'product'
 }
 
 const Card = ({
@@ -24,25 +27,41 @@ const Card = ({
   description,
   score,
   category,
-  spotlight
+  spotlight,
+  type
 }: CardProps) => {
-  return (
-    <CardContainer>
-      <img src={image} alt={title} />
-      <Tag spotlight={spotlight} category={category} />
-      <CardInfo>
-        <CardHeader>
+  if (type === 'restaurant') {
+    return (
+      <CardContainer type={type}>
+        <img src={image} alt={title} />
+        <Tag spotlight={spotlight as string} category={category as string} />
+        <CardInfo type={type}>
+          <CardHeader>
+            <h3>{title}</h3>
+            <Score>
+              <span>{score}</span>
+              <img src={star} alt={title} />
+            </Score>
+          </CardHeader>
+          <Description type={type}>{description}</Description>
+          <ButtonStyle name="info">
+            <Link to="/">Saiba Mais</Link>
+          </ButtonStyle>
+        </CardInfo>
+      </CardContainer>
+    )
+  } else {
+    return (
+      <CardContainer type={type}>
+        <img src={image} alt={title} />
+        <CardInfo type={type}>
           <h3>{title}</h3>
-          <Score>
-            <span>{score}</span>
-            <img src={star} alt={title} />
-          </Score>
-        </CardHeader>
-        <Description>{description}</Description>
-        <Button name="info">Saiba mais</Button>
-      </CardInfo>
-    </CardContainer>
-  )
+          <Description type={type}>{description}</Description>
+          <Button name="add">Adicionar ao carrinho</Button>
+        </CardInfo>
+      </CardContainer>
+    )
+  }
 }
 
 export default Card

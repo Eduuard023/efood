@@ -8,11 +8,6 @@ export const HeroBg = styled.div`
   margin-bottom: 80px;
 `
 
-export const Logo = styled.img`
-  width: 125px;
-  height: 58px;
-`
-
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -23,6 +18,7 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
   color: ${colors.vermelho};
+  font-weight: 900;
   margin-top: 138px;
   width: 540px;
   height: 82px;

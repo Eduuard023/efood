@@ -1,8 +1,7 @@
 import facebook from '../../assets/images/facebook-logo.png'
 import instagram from '../../assets/images/instagram-logo.png'
 import twitter from '../../assets/images/twitter-logo.png'
-import logo from '../../assets/images/logo.png'
-import { Logo } from '../Header/styles'
+import { Logo } from '../Logo'
 import { FooterBg, FooterContainer, SocialMedias } from './styles'
 
 const Footer = () => {
@@ -10,7 +9,7 @@ const Footer = () => {
     <>
       <FooterBg>
         <FooterContainer className="container">
-          <Logo src={logo} alt="logo efood" />
+          <Logo />
           <SocialMedias>
             <li>
               <a href="#">{instagram}</a>
