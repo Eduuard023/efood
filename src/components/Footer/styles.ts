@@ -9,6 +9,7 @@ export const FooterBg = styled.div`
     width: 480px;
     height: 24px;
     color: ${colors.vermelho};
+    font-weight: 400px;
     font-size: 10px;
     text-align: center;
   }
@@ -34,9 +35,11 @@ export const SocialMedias = styled.ul`
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     a {
       color: ${colors.bege};
+      font-size: 12px;
     }
   }
 `

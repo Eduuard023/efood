@@ -44,6 +44,7 @@ export const CardInfo = styled.div<
   h3 {
     font-size: ${(props) => (props.type === 'restaurant' ? '18px' : '16px')};
     font-weight: ${(props) => (props.type === 'restaurant' ? `900` : `700`)};
+    margin-top: 4px;
   }
 `
 

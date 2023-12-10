@@ -1,12 +1,6 @@
 import HeaderRestaurant from '../../components/RestaurantHeader'
 import { Product } from '../../models/Product'
-import {
-  Banner,
-  BannerImage,
-  Category,
-  Container,
-  RestaurantName
-} from './styles'
+import * as S from './styles'
 import pizza from '../../assets/images/pizza.png'
 import CardList from '../../components/CardList'
 
@@ -59,13 +53,13 @@ const Details = () => {
   return (
     <>
       <HeaderRestaurant />
-      <Banner>
-        <BannerImage />
-        <Container className="container">
-          <Category>Italiana</Category>
-          <RestaurantName>La Dolce Vita Trattoria</RestaurantName>
-        </Container>
-      </Banner>
+      <S.Banner>
+        <S.BannerImage />
+        <S.Container className="container">
+          <S.Category>Italiana</S.Category>
+          <S.RestaurantName>La Dolce Vita Trattoria</S.RestaurantName>
+        </S.Container>
+      </S.Banner>
       <CardList orientation="horizontal" products={products} />
     </>
   )

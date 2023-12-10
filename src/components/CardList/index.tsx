@@ -1,5 +1,5 @@
 import Card from '../Card'
-import { ListContainer } from './styles'
+import * as S from './styles'
 import Restaurant from '../../models/Restaurant'
 import { Product } from '../../models/Product'
 
@@ -12,7 +12,7 @@ export type CardListProps = {
 const CardList = ({ restaurants, products }: CardListProps) => {
   if (restaurants !== undefined) {
     return (
-      <ListContainer orientation="vertical" className="container">
+      <S.ListContainer orientation="vertical" className="container">
         {restaurants?.map((restaurant) => (
           <Card
             title={restaurant.title}
@@ -25,11 +25,11 @@ const CardList = ({ restaurants, products }: CardListProps) => {
             type="restaurant"
           />
         ))}
-      </ListContainer>
+      </S.ListContainer>
     )
   } else {
     return (
-      <ListContainer orientation="horizontal" className="container">
+      <S.ListContainer orientation="horizontal" className="container">
         {products?.map((product) => (
           <Card
             title={product.title}
@@ -39,7 +39,7 @@ const CardList = ({ restaurants, products }: CardListProps) => {
             key={product.id}
           />
         ))}
-      </ListContainer>
+      </S.ListContainer>
     )
   }
 }

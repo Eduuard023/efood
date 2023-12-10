@@ -10,7 +10,7 @@ export const ButtonStyle = styled.button<ButtonProps>`
   width: ${(props) => (props.name === 'info' ? '82px' : '304px')}
   height: 24px;
   border: none;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 14px;
 
   a{

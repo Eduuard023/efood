@@ -22,6 +22,7 @@ export const Cart = styled.h3`
   margin-left: 193px;
   width: 256px;
   text-align: right;
+  font-size: 18px;
 `
 
 export const HeaderBackground = styled.div`

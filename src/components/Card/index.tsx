@@ -3,13 +3,7 @@ import star from '../../assets/images/estrela.png'
 import Button from '../Button'
 import { ButtonStyle } from '../Button/styled'
 import Tag from '../Tag'
-import {
-  CardContainer,
-  CardHeader,
-  CardInfo,
-  Description,
-  Score
-} from './styles'
+import * as S from './styles'
 
 export type CardProps = {
   image: string
@@ -32,34 +26,34 @@ const Card = ({
 }: CardProps) => {
   if (type === 'restaurant') {
     return (
-      <CardContainer type={type}>
+      <S.CardContainer type={type}>
         <img src={image} alt={title} />
         <Tag spotlight={spotlight as string} category={category as string} />
-        <CardInfo type={type}>
-          <CardHeader>
+        <S.CardInfo type={type}>
+          <S.CardHeader>
             <h3>{title}</h3>
-            <Score>
+            <S.Score>
               <span>{score}</span>
               <img src={star} alt={title} />
-            </Score>
-          </CardHeader>
-          <Description type={type}>{description}</Description>
+            </S.Score>
+          </S.CardHeader>
+          <S.Description type={type}>{description}</S.Description>
           <ButtonStyle name="info">
-            <Link to="/">Saiba Mais</Link>
+            <Link to="/details">Saiba Mais</Link>
           </ButtonStyle>
-        </CardInfo>
-      </CardContainer>
+        </S.CardInfo>
+      </S.CardContainer>
     )
   } else {
     return (
-      <CardContainer type={type}>
+      <S.CardContainer type={type}>
         <img src={image} alt={title} />
-        <CardInfo type={type}>
+        <S.CardInfo type={type}>
           <h3>{title}</h3>
-          <Description type={type}>{description}</Description>
+          <S.Description type={type}>{description}</S.Description>
           <Button name="add">Adicionar ao carrinho</Button>
-        </CardInfo>
-      </CardContainer>
+        </S.CardInfo>
+      </S.CardContainer>
     )
   }
 }
