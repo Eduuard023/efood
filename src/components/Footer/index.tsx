@@ -1,6 +1,6 @@
-import facebook from '../../assets/images/facebook-logo.png'
-import instagram from '../../assets/images/instagram-logo.png'
-import twitter from '../../assets/images/twitter-logo.png'
+import facebook from '../../assets/images/facebook.png'
+import instagram from '../../assets/images/instagram.png'
+import twitter from '../../assets/images/twitter.png'
 import { Logo } from '../Logo'
 import * as S from './styles'
 
@@ -11,21 +11,9 @@ const Footer = () => {
         <S.FooterContainer className="container">
           <Logo />
           <S.SocialMedias>
-            <li>
-              <a href="#">
-                <img src={instagram} />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src={facebook} />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src={twitter} />
-              </a>
-            </li>
+            <img src={instagram} alt="" />
+            <img src={facebook} alt="" />
+            <img src={twitter} alt="" />
           </S.SocialMedias>
           <p>
             A efood é uma plataforma para divulgação de estabelecimentos, a

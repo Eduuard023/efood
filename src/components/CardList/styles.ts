@@ -5,6 +5,7 @@ export const ListContainer = styled.section<CardListProps>`
   display: grid;
   grid-template-columns: ${(props) =>
     props.orientation === 'vertical' ? '1fr 1fr' : '1fr 1fr 1fr'};
-  calumn-gap: 80px;
-  row-gap: 48px;
+  column-gap: ${(props) =>
+    props.orientation === 'vertical' ? '48px 80px' : '32px'};
+  row-gap: 32px;
 `

@@ -9,7 +9,7 @@ export const TagStyled = styled.div`
   div {
     background-color: ${colors.vermelho};
     color: ${colors.bege};
-    font-weight: 700px;
+    font-weight: 700;
     padding: 6px 4px;
     font-size: 12px;
     text-align: center;

@@ -8,7 +8,6 @@ export const HeaderContainer = styled.header`
   height: 100%;
   color: ${colors.vermelho};
   font-weight: bold;
-  font-size: 18px;
   line-height: 21px;
 `
 
@@ -16,6 +15,7 @@ export const Title = styled.h2`
   margin-right: 340px;
   width: 108px;
   text-align: center;
+  font-size: 18px;
 `
 
 export const Cart = styled.h3`

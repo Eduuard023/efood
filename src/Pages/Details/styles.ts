@@ -31,13 +31,14 @@ export const Container = styled.div`
 
 export const Category = styled.h3`
   margin-top: 24px;
-  font-weight: 100};
+  font-weight: 100;
   font-size: 32px;
+  line-height: 38px;
 `
 
 export const RestaurantName = styled.h2`
   font-weight: 900;
-  margin-bottom: 32px;
+  line-height: 38px;
   height: 34px;
   font-size: 32px;
 `
