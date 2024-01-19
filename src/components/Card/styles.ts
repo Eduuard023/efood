@@ -1,70 +1,64 @@
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 import { colors } from '../../styles'
 import { TagStyled } from '../Tag/styles'
 import { CardProps } from '.'
+import { ButtonStyle } from '../Button/styled'
 
-export const CardContainer = styled.div<
-  Omit<
-    CardProps,
-    'title' | 'description' | 'score' | 'image' | 'spotlight' | 'category'
-  >
->`
-  max-width: ${(props) => (props.type === 'restaurant' ? '472px' : '320px')};
+export const CardContainer = styled.div<CardProps>`
+  max-width: ${(props) => (props.isrestaurant ? '472px' : '320px')};
   width: 100%;
-  color: ${(props) =>
-    props.type === 'restaurant' ? colors.vermelho : colors.bege};
+  color: ${(props) => (props.isrestaurant ? colors.vermelho : colors.bege)};
   background-color: ${(props) =>
-    props.type === 'restaurant' ? colors.branco : colors.vermelho};
-  border: ${(props) =>
-    props.type === 'restaurant' && `1px solid ${colors.vermelho}`};
+    props.isrestaurant ? colors.branco : colors.vermelho};
+  border: ${(props) => props.isrestaurant && `1px solid ${colors.vermelho}`};
   border-top: none;
   position: relative;
-  padding: ${(props) => props.type !== 'restaurant' && '8px'};
-  width: ${(props) => props.type !== 'restaurant' && '320px'};
-  height: ${(props) => props.type !== 'restaurant' && '338px'};
+  padding: ${(props) => !props.isrestaurant && '8px'};
+  width: ${(props) => !props.isrestaurant && '320px'};
+  height: ${(props) => !props.isrestaurant && '338px'};
 
   ${TagStyled} {
     position: absolute;
     right: 16px;
     top: 16px;
   }
-`
 
-export const CardInfo = styled.div<
-  Omit<
-    CardProps,
-    'title' | 'description' | 'score' | 'image' | 'spotlight' | 'category'
-  >
->`
-  padding: ${(props) => props.type === 'restaurant' && '8px'};
-  display: ${(props) => props.type === 'product' && 'flex'};
-  flex-direction: ${(props) => props.type === 'product' && 'column'};
-  gap: ${(props) => props.type === 'product' && '8px 0'};
-
-  h3 {
-    font-size: ${(props) => (props.type === 'restaurant' ? '18px' : '16px')};
-    font-weight: ${(props) => (props.type === 'restaurant' ? `900` : `700`)};
+  > img {
+    width: ${(props) => (props.isrestaurant ? '470px' : '304px')};
+    height: ${(props) => (props.isrestaurant ? '217px' : '168px')};
+    object-fit: cover;
+    cursor: pointer;
   }
 `
 
-export const Description = styled.p<
-  Omit<
-    CardProps,
-    'title' | 'description' | 'score' | 'image' | 'spotlight' | 'category'
-  >
->`
-  margin-bottom: ${(props) => props.type === 'restaurant' && '8px'};
-  font-weight: 400;
-  font-size: 14px;
-  height: 88px;
+export const CardInfo = styled.div<CardProps>`
+  padding: ${(props) => props.isrestaurant && '8px'};
+  display: ${(props) => !props.isrestaurant && 'flex'};
+  flex-direction: ${(props) => !props.isrestaurant && 'column'};
+  gap: ${(props) => !props.isrestaurant && '8px'};
+
+  h3 {
+    font-size: ${(props) => (props.isrestaurant ? '18px' : '16px')};
+    font-weight: ${(props) => (props.isrestaurant ? `700` : `900`)};
+    margin-top: ${(props) => (props.isrestaurant ? '-4px' : '4px')};
+  }
 `
 
-export const CardHeader = styled.div`
+export const Description = styled.p<CardProps>`
+  margin-bottom: ${(props) => props.isrestaurant && '16px'};
+  font-weight: 200;
+  font-size: 14px;
+  width: ${(props) => (props.isrestaurant ? '456px' : '304px')};
+  height: 88px;
+  line-height: 22px;
+`
+
+export const CardHeader = styled.div<CardProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 18px;
-  margin-bottom: 16px;
+  margin-bottom: ${(props) => (props.isrestaurant ? '16px' : '0px')};
 `
 
 export const Score = styled.div`
@@ -73,4 +67,79 @@ export const Score = styled.div`
   font-size: 18px;
   font-weight: 700;
   gap: 8px;
+  margin-top: -4px;
+
+  span {
+    width: 26px;
+    height: 21px;
+  }
+`
+
+export const ModalContainer = styled.div`
+  width: 1024px;
+  height: 344px;
+  background-color: ${colors.vermelho};
+  padding: 32px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > img {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+`
+
+export const ModalContent = styled.div`
+  display: flex;
+  color: ${colors.branco};
+  gap: 24px;
+  font-weight: 200;
+
+  div {
+    width: 656px;
+    height: 176px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    h3 {
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    ${ButtonStyle} {
+      width: 218px;
+      height: 24px;
+      padding: 4px 8px;
+    }
+  }
+`
+
+export const ModalImage = styled.img`
+  width: 280px;
+  height: 280px;
 `

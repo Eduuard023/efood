@@ -1,16 +1,18 @@
 import * as S from './styles'
 
 export type TagProps = {
-  spotlight: string
-  category: string
+  destacado: boolean
+  tipo: string
 }
 
-const Tag = ({ spotlight, category }: TagProps) => {
+const Tag = ({ destacado, tipo }: TagProps) => {
   return (
     <>
       <S.TagStyled>
-        <S.TagSpot spotlight={spotlight}>Destaque da semana</S.TagSpot>
-        <div>{category}</div>
+        <S.TagSpotlight destacado={destacado}>
+          Destaque da semana
+        </S.TagSpotlight>
+        <div>{tipo}</div>
       </S.TagStyled>
     </>
   )

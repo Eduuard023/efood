@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
 import { TagProps } from '.'
+import { colors } from '../../styles'
 
 export const TagStyled = styled.div`
   display: flex;
@@ -17,6 +17,6 @@ export const TagStyled = styled.div`
   }
 `
 
-export const TagSpot = styled.div<Omit<TagProps, 'category'>>`
-  display: ${(props) => (props.spotlight === 'false' ? 'none' : 'block')};
+export const TagSpotlight = styled.div<Omit<TagProps, 'tipo'>>`
+  display: ${(props) => (!props.destacado ? 'none' : 'block')};
 `

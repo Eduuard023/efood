@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import bannerImg from '../../assets/images/banner-Italia.png'
+
 import { colors } from '../../styles'
 
 export const Banner = styled.div`
@@ -15,7 +15,6 @@ export const BannerImage = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: url(${bannerImg});
   background-size: cover;
   filter: brightness(0.5);
 `
@@ -31,14 +30,13 @@ export const Container = styled.div`
 
 export const Category = styled.h3`
   margin-top: 24px;
-  font-weight: 100;
+  font-weight: 200;
   font-size: 32px;
-  line-height: 38px;
 `
 
 export const RestaurantName = styled.h2`
   font-weight: 900;
-  line-height: 38px;
+  margin-bottom: 32px;
   height: 34px;
   font-size: 32px;
 `
