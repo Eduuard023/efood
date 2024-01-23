@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import close from '../../assets/images/estrela.png'
+import close from '../../assets/images/close.png'
 import star from '../../assets/images/estrela.png'
 import Tag from '../Tag'
 import { ButtonStyle } from '../Button/styled'
@@ -83,6 +83,10 @@ const MenuItemCard = ({ item }: { item: MenuItem }) => {
       {modalIsOpen && (
         <>
           <S.ModalContainer className="container">
+            <div
+              className="overlay"
+              onClick={() => setModalIsOpen(false)}
+            ></div>
             <img
               src={close}
               alt="Ícone de fechar"

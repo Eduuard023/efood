@@ -100,11 +100,11 @@ export const ModalContainer = styled.div`
   }
 
   .overlay {
-    position: fixed;
+    position: absolute;
     width: 100vw;
     height: 100vh;
-    z-index: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.73);
   }
 `
 
@@ -113,6 +113,8 @@ export const ModalContent = styled.div`
   color: ${colors.branco};
   gap: 24px;
   font-weight: 200;
+  background-color: ${colors.vermelho};
+  padding: 32px;
 
   div {
     width: 656px;
@@ -142,4 +144,5 @@ export const ModalContent = styled.div`
 export const ModalImage = styled.img`
   width: 280px;
   height: 280px;
+  object-fit: cover;
 `
