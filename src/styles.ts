@@ -8,6 +8,12 @@ export const colors = {
   begeClaro: '#fff8f2'
 }
 
+export const breakpoints = {
+  desktop: '1024px',
+  tablet: '768px',
+  mobile: '380'
+}
+
 export const GlobalCss = createGlobalStyle`
   * {
     margin: 0;
