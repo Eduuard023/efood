@@ -6,6 +6,7 @@ import {
   useGetRestaurantMenuQuery,
   useGetRestaurantDataQuery
 } from '../../services/api'
+import { AsideBar } from '../../components/AsideBar'
 
 const Details = () => {
   const { id } = useParams()
@@ -37,6 +38,7 @@ const Details = () => {
           <S.RestaurantName>{restaurant.titulo}</S.RestaurantName>
         </S.Container>
       </S.Banner>
+      <AsideBar />
       <MenuList items={menu} />
     </>
   )
