@@ -59,6 +59,13 @@ const MenuItemCard = ({ item }: { item: MenuItem }) => {
     }
   }
 
+  const formataPreco = (preco = 0) => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(preco)
+  }
+
   return (
     <>
       <S.CardContainer isrestaurant={false}>
@@ -102,7 +109,9 @@ const MenuItemCard = ({ item }: { item: MenuItem }) => {
                     ? `Serve: de ${item.porcao}`
                     : `Serve: ${item.porcao}`}
                 </p>
-                <ButtonStyle name="add">{`Adicionar ao carrinho - R$ ${item.preco}`}</ButtonStyle>
+                <ButtonStyle name="add">{`Adicionar ao carrinho - ${formataPreco(
+                  item.preco
+                )}`}</ButtonStyle>
               </div>
             </S.ModalContent>
             <div className="overlay"></div>

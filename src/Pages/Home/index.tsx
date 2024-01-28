@@ -1,26 +1,25 @@
 import Header from '../../components/Header'
 import { RestaurantList } from '../../components/RestaurantList'
-import { useEffect, useState } from 'react'
-import { Restaurant } from '../../types/api'
+import { useGetAllRestaurantsQuery } from '../../services/api'
 
 const Home = () => {
-  const [restaurants, setRestaurants] = useState<Restaurant[]>([])
+  const { data: restaurants } = useGetAllRestaurantsQuery()
 
-  useEffect(() => {
-    const getData = async () => {
-      const restaurantData = await fetch(
-        'https://fake-api-tau.vercel.app/api/efood/restaurantes'
-      ).then((res) => res.json())
-      setRestaurants(restaurantData)
-    }
-    getData()
-  }, [])
-
+  if (restaurants) {
+    return (
+      <>
+        <Header />
+        <div className="container">
+          <RestaurantList restaurants={restaurants} />
+        </div>
+      </>
+    )
+  }
   return (
     <>
       <Header />
       <div className="container">
-        <RestaurantList restaurants={restaurants} />
+        <h2 style={{ display: 'grid', placeItems: 'center' }}>Carregando...</h2>
       </div>
     </>
   )
