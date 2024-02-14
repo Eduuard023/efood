@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { colors } from '../../styles'
 import { ButtonStyle } from '../Button/styled'
+import { Form } from 'formik'
 
 export const Overlay = styled.div`
   position: absolute;
@@ -41,6 +42,7 @@ export const SideBar = styled.aside`
     color: ${colors.bege};
     font-weight: 400;
     margin-bottom: 16px;
+    font-size: 14px;
   }
   ${ButtonStyle} {
     width: 100%;
@@ -71,10 +73,64 @@ export const CartItem = styled.div`
   gap: 8px;
   h3 {
     margin-bottom: 16px;
+    font-size: 18px;
   }
   img {
     width: 80px;
     height: 80px;
     object-fit: cover;
+  }
+
+  span {
+    font-size: 14px;
+  }
+`
+
+export const FormsTitles = styled.h3`
+  font-size: 16px;
+  color: ${colors.bege};
+  font-weight: $400;
+  margin-bottom: 16px;
+`
+
+export const StyledForm = styled(Form)`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  div {
+    display: flex;
+    gap: 34px;
+    input {
+      width: 50%;
+    }
+  }
+  label {
+    p {
+      color: ${colors.bege};
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    input {
+      background-color: ${colors.bege};
+      border: none;
+      width: 100%;
+      height: 32px;
+      padding: 8px;
+      &:focus {
+        outline: none;
+      }
+    }
+    div {
+      font-size: 14px;
+      margin: 4px 0;
+    }
+  }
+`
+
+export const CardNumber = styled.div`
+  gap: 30px;
+  :first-child:label {
+    width: 95%;
   }
 `
