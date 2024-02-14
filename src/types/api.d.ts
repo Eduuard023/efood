@@ -16,3 +16,33 @@ export interface MenuItem {
   descricao: string
   porcao: string
 }
+
+export interface Product {
+  id: number
+  price: number
+}
+
+export interface Purchase {
+  products: Product[]
+  delivery: {
+    receiver: string
+    address: {
+      description: string
+      city: string
+      zipCode: string
+      number: number
+      complement?: string
+    }
+  }
+  payment: {
+    card: {
+      name: string
+      number: string
+      code: number
+      expires: {
+        month: number
+        year: number
+      }
+    }
+  }
+}

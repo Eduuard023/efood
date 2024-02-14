@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../styles'
 import { ButtonStyle } from '../Button/styled'
-import { Form } from 'formik'
 
 export const Overlay = styled.div`
   position: absolute;
@@ -22,6 +21,7 @@ export const AsideContainer = styled.div`
   height: 100%;
   justify-content: flex-end;
   z-index: 1;
+
   &.is-open {
     display: flex;
   }
@@ -33,17 +33,20 @@ export const SideBar = styled.aside`
   padding: 32px 8px;
   max-width: 360px;
   width: 100%;
+
   ul {
     margin-bottom: 40px;
   }
+
   h4 {
     display: flex;
     justify-content: space-between;
     color: ${colors.bege};
-    font-weight: 400;
+    font-weight: 700;
     margin-bottom: 16px;
     font-size: 14px;
   }
+
   ${ButtonStyle} {
     width: 100%;
     height: 24px;
@@ -56,6 +59,7 @@ export const CartItemContainer = styled.li`
   margin-bottom: 16px;
   padding: 8px 8px 12px 8px;
   position: relative;
+
   > img {
     position: absolute;
     right: 8px;
@@ -71,10 +75,12 @@ export const CartItem = styled.div`
   display: flex;
   color: ${colors.vermelho};
   gap: 8px;
+
   h3 {
     margin-bottom: 16px;
     font-size: 18px;
   }
+
   img {
     width: 80px;
     height: 80px;
@@ -89,48 +95,63 @@ export const CartItem = styled.div`
 export const FormsTitles = styled.h3`
   font-size: 16px;
   color: ${colors.bege};
-  font-weight: $400;
+  font-weight: 700;
   margin-bottom: 16px;
 `
 
-export const StyledForm = styled(Form)`
+export const ConfirmationMessage = styled.p`
+  font-size: 14px;
+  color: ${colors.bege};
+  font-weight: 400;
+`
+
+export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  div {
+
+  .cep-number {
     display: flex;
     gap: 34px;
-    input {
-      width: 50%;
-    }
   }
-  label {
-    p {
-      color: ${colors.bege};
-      font-size: 14px;
-      font-weight: 400;
-      margin-bottom: 8px;
-    }
-    input {
-      background-color: ${colors.bege};
-      border: none;
+
+  .card-code {
+    display: flex;
+    gap: 30px;
+
+    :first-child {
       width: 100%;
-      height: 32px;
-      padding: 8px;
-      &:focus {
-        outline: none;
-      }
-    }
-    div {
-      font-size: 14px;
-      margin: 4px 0;
     }
   }
 `
 
-export const CardNumber = styled.div`
-  gap: 30px;
-  :first-child:label {
-    width: 95%;
+export const InputGroup = styled.div`
+  margin-top: 8px;
+
+  div.error-message {
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
+  label {
+    color: ${colors.bege};
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  input {
+    background-color: ${colors.bege};
+    border: none;
+    width: 100%;
+    height: 32px;
+    padding: 8px;
+    margin-top: 8px;
+
+    &.error {
+      border: 2px solid black;
+    }
+
+    &:focus {
+      outline: none;
+    }
   }
 `

@@ -7,6 +7,7 @@ import {
   useGetRestaurantDataQuery
 } from '../../services/api'
 import { AsideBar } from '../../components/AsideBar'
+import Loader from '../../components/Loader'
 
 const Details = () => {
   const { id } = useParams()
@@ -21,9 +22,7 @@ const Details = () => {
     return (
       <>
         <RestaurantHeader />
-        <h2 style={{ display: 'grid', placeItems: 'center', height: '400px' }}>
-          Carregando...
-        </h2>
+        <Loader />
       </>
     )
   }

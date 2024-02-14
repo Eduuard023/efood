@@ -1,4 +1,5 @@
 import Header from '../../components/Header'
+import Loader from '../../components/Loader'
 import { RestaurantList } from '../../components/RestaurantList'
 import { useGetAllRestaurantsQuery } from '../../services/api'
 
@@ -19,7 +20,7 @@ const Home = () => {
     <>
       <Header />
       <div className="container">
-        <h2 style={{ display: 'grid', placeItems: 'center' }}>Carregando...</h2>
+        <Loader />
       </div>
     </>
   )

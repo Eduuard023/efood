@@ -1,6 +1,7 @@
 import { RestaurantCard } from '../Card'
 import * as S from './styles'
 import { Restaurant } from '../../types/api'
+import Loader from '../Loader'
 
 export interface RestaurantListProps {
   restaurants: Restaurant[]
@@ -13,7 +14,7 @@ const RestaurantList = ({ restaurants }: RestaurantListProps) => {
         style={{ display: 'grid', placeItems: 'center' }}
         className="container"
       >
-        <h2>Carregando...</h2>
+        <Loader />
       </div>
     )
   } else {

@@ -12,7 +12,7 @@ export const ButtonStyle = styled.button<Omit<ButtonProps, 'onClick'>>`
   border: none;
   font-weight: 700;
   font-size: 14px;
-  margin-top: ${(props) => (props.first === 'first' ? '24px' : '')};
+  margin: ${(props) => (props.first === 'first' ? '24px 0 8px 0' : '')};
 
   a {
     color: ${(props) =>
